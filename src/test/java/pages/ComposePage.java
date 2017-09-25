@@ -25,7 +25,7 @@ public class ComposePage extends Page {
         WebElement frame = driver.findElement(By.xpath("//iframe[contains(@id,'composeEditor_ifr')]"));
         driver.switchTo().frame(frame);
         WebElement elementMessageBody = driver.findElement(message);
-        elementMessageBody.sendKeys("Hey! It's my home work! ))");
+        elementMessageBody.sendKeys(adress);
         driver.switchTo().defaultContent();
         driver.findElement(By.cssSelector("span.b-toolbar__btn__text")).click();
 
