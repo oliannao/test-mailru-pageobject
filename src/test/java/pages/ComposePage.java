@@ -10,7 +10,7 @@ public class ComposePage extends Page {
     private final By message = By.id("tinymce");
     private String text = "rebenokan@inbox.ru";
     private String adress = "Hey! It's my home work! ))";
-    private final By m = By.cssSelector("span.b-toolbar__btn__text");
+    private final By m = By.xpath("//span[contains(text(),\"Отправить\")]")).click();
 
     public ComposePage(WebDriver driver) {
         super(driver);
@@ -27,7 +27,7 @@ public class ComposePage extends Page {
         WebElement elementMessageBody = driver.findElement(message);
         elementMessageBody.sendKeys(adress);
         driver.switchTo().defaultContent();
-        driver.findElement(By.cssSelector("span.b-toolbar__btn__text")).click();
+        driver.findElement(m).click();
 
     }
 }
